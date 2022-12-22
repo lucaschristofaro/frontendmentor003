@@ -1,0 +1,128 @@
+:root {
+  /* Primary colors */
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+
+  /* Neutral colors */
+  --white: hsl(0, 0%, 100%);
+  --main-bg: hsl(217, 54%, 11%);
+  --main-card: hsl(216, 50%, 16%);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--main-bg);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+
+  font-family: Outfit;
+}
+.card {
+  background-color: var(--main-card);
+  max-width: 350px;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0px 20px 25px 15px rgba(0, 0, 0, 0.05),
+    0px 40px 30px 15px rgba(0, 0, 0, 0.1);
+}
+.product_image {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.product_image::after {
+  --cyan: hsla(178, 100%, 50%, 0.5);
+  content: url(./images/icon-view.svg);
+  background: var(--cyan);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+  opacity: 0;
+
+  transition: all 0.2s ease;
+}
+.product_image:hover::after {
+  opacity: 1;
+}
+.product_image img {
+  width: 100%;
+  display: block;
+}
+.card_body {
+  padding: 23px 0;
+  border-bottom: 1px solid hsl(215, 32%, 27%);
+  margin-bottom: 15px;
+}
+h3 {
+  color: var(--white);
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+h3:hover {
+  color: var(--cyan);
+}
+.description > p {
+  color: var(--soft-blue);
+  font-weight: 300;
+  font-size: 13px;
+  margin-bottom: 23px;
+  line-height: 1.5;
+}
+.price-days {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.price,
+.days {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 13px;
+}
+.price {
+  color: var(--cyan);
+}
+.days {
+  color: var(--soft-blue);
+}
+.icon {
+  margin-right: 6px;
+}
+.creator {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50px;
+  margin-right: 15px;
+  border: 2px solid var(--white);
+}
+.name {
+  color: var(--soft-blue);
+  font-weight: 500;
+}
+.name a {
+  color: var(--white);
+  font-weight: 400;
+  text-decoration: none;
+}
+.name a:hover {
+  color: var(--cyan);
+}
